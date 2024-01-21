@@ -2,15 +2,13 @@ public class Guest {
 
         private String Name;
         private String LastName;
-        private String phoneNumber;
         private String email;
         private String id;
 
 
-        public Guest(String Name,String LastName, String phoneNumber, String email,String id) {
+        public Guest(String Name,String LastName, String email,String id) {
             this.Name = Name;
             this.LastName=LastName;
-            this.phoneNumber = phoneNumber;
             this.email = email;
             this.id=id;
         }
@@ -26,14 +24,6 @@ public class Guest {
     }
         public void setLastName(String Lastname) {
         this.LastName = LastName;}
-
-
-        public String getPhoneNumber() {
-            return phoneNumber;
-        }
-        public void setPhoneNumber(String phoneNumber) {
-            this.phoneNumber = phoneNumber;
-        }
 
         public String getEmail() {
             return email;
