@@ -73,7 +73,7 @@ public class LoginPage extends JFrame {
         name.setBorder(new LineBorder(Color.blue));
         name.setForeground(Color.blue);
         name.setHorizontalAlignment(JTextField.CENTER);
-        name.setBounds(200, 50, 340, 40);
+        name.setBounds(200, 100, 340, 40);
         jPanel.add(name);
 
         JTextField LastName = new JTextField("LastName");
@@ -81,7 +81,7 @@ public class LoginPage extends JFrame {
         LastName.setHorizontalAlignment(JTextField.CENTER);
         LastName.setForeground(Color.blue);
         LastName.setFont(new Font("", Font.PLAIN, 22));
-        LastName.setBounds(200, 100, 340, 40);
+        LastName.setBounds(200, 150, 340, 40);
         jPanel.add(LastName);
 
         JTextField Id = new JTextField("ID");
@@ -89,7 +89,7 @@ public class LoginPage extends JFrame {
         Id.setHorizontalAlignment(JTextField.CENTER);
         Id.setForeground(Color.blue);
         Id.setFont(new Font("", Font.PLAIN, 22));
-        Id.setBounds(200, 150, 340, 40);
+        Id.setBounds(200, 200, 340, 40);
         jPanel.add(Id);
 
         JTextField email = new JTextField("Email");
@@ -97,7 +97,7 @@ public class LoginPage extends JFrame {
         email.setHorizontalAlignment(JTextField.CENTER);
         email.setForeground(Color.blue);
         email.setFont(new Font("", Font.PLAIN, 22));
-        email.setBounds(200, 200, 340, 40);
+        email.setBounds(200, 250, 340, 40);
         jPanel.add(email);
 
         JTextField pass = new JTextField("Password");
@@ -105,7 +105,7 @@ public class LoginPage extends JFrame {
         pass.setHorizontalAlignment(JTextField.CENTER);
         pass.setForeground(Color.blue);
         pass.setFont(new Font("", Font.PLAIN, 22));
-        pass.setBounds(200, 250, 340, 40);
+        pass.setBounds(200, 300, 340, 40);
         jPanel.add(pass);
 
 
@@ -114,7 +114,7 @@ public class LoginPage extends JFrame {
         button1.setHorizontalAlignment(JButton.CENTER);
         button1.setBackground(Color.blue);
         button1.setForeground(Color.white);
-        button1.setBounds(200, 310, 340, 45);
+        button1.setBounds(200, 360, 340, 45);
         jPanel.add(button1);
 
 
@@ -129,6 +129,10 @@ public class LoginPage extends JFrame {
                 int security = hashThePass.rconizeLevel(password);
                 if (security <3) {
                     JOptionPane.showMessageDialog(null, "Your pass doesn't have the security that wee need\n" + "Security of your pass:" + security, "Error", JOptionPane.ERROR_MESSAGE);}
+                if (emailCheck && security>=3){
+                    JOptionPane.showMessageDialog(null,"Hope you enjoy :)","Welcome!",JOptionPane.PLAIN_MESSAGE);
+
+                }
              });
 
         frame.add(jPanel);
