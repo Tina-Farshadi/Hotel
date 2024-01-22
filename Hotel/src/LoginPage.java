@@ -119,9 +119,18 @@ public class LoginPage extends JFrame {
 
 
         button1.addActionListener(e -> {
+           EmailValidator emailValidator=new EmailValidator();
+            String Email = email.getText();
+            boolean emailCheck=emailValidator.CheckEmail(Email);
+            if (!emailCheck) {
+                JOptionPane.showMessageDialog(null, "Invalid Email!", "Error", JOptionPane.ERROR_MESSAGE);}
+                HashTHePass hashThePass = new HashTHePass();
+                String password = pass.getText();
+                int security = hashThePass.rconizeLevel(password);
+                if (security <3) {
+                    JOptionPane.showMessageDialog(null, "Your pass doesn't have the security that wee need\n" + "Security of your pass:" + security, "Error", JOptionPane.ERROR_MESSAGE);}
+             });
 
-        });
-        
         frame.add(jPanel);
         frame.setVisible(true);
     }
