@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class LoginPage extends JFrame {
@@ -8,42 +9,122 @@ public class LoginPage extends JFrame {
         frame = new JFrame();
         frame.setTitle("Sign up/Sign in");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setSize(750,600);
+        frame.setSize(750, 600);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         Intro();
     }
-    public static void Intro(){
 
-        JPanel jPanel=new JPanel();
+    public static void Intro() {
+
+        JPanel jPanel = new JPanel();
         jPanel.setBackground(Color.white);
-        jPanel.setLayout(new GridLayout(4,1,0,0));
+        jPanel.setLayout(new GridLayout(4, 1, 0, 0));
         JLabel label = new JLabel("Welcome to the Hotel :)");
         label.setHorizontalAlignment(JLabel.CENTER);
-        label.setFont(new Font("",Font.ITALIC, 30));
+        label.setFont(new Font("", Font.ITALIC, 30));
         label.setForeground(Color.BLUE);
         jPanel.add(label);
 
-        JButton button1=new JButton("1.Sign Up");
+        JButton button1 = new JButton("1.Sign Up");
         button1.setBackground(Color.white);
-        button1.setFont(new Font("",Font.LAYOUT_NO_START_CONTEXT,25));
+        button1.setFont(new Font("", Font.LAYOUT_NO_START_CONTEXT, 25));
         button1.setForeground(Color.blue);
         jPanel.add(button1);
 
 
-        JButton button2=new JButton("2.Login");
+        JButton button2 = new JButton("2.Login");
         button2.setBackground(Color.white);
-        button2.setFont(new Font("",Font.LAYOUT_NO_START_CONTEXT,25));
+        button2.setFont(new Font("", Font.LAYOUT_NO_START_CONTEXT, 25));
         button2.setForeground(Color.blue);
         jPanel.add(button2);
 
-        JButton button3=new JButton("2.Login as an admin");
+        JButton button3 = new JButton("2.Login as an admin");
         button3.setBackground(Color.white);
-        button3.setFont(new Font("",Font.LAYOUT_NO_START_CONTEXT,25));
+        button3.setFont(new Font("", Font.LAYOUT_NO_START_CONTEXT, 25));
         button3.setForeground(Color.blue);
         jPanel.add(button3);
+
+
+        button1.addActionListener(e -> {
+           signUp();
+           frame.remove(jPanel);
+        });
+
+        button2.addActionListener(e -> {
+
+        });
+
+        button3.addActionListener(e -> {
+
+        });
 
         frame.add(jPanel);
         frame.setVisible(true);
     }
+
+    public static void signUp() {
+        JPanel jPanel = new JPanel();
+        jPanel.setBackground(Color.white);
+        jPanel.setLayout(null);
+
+        JTextField name = new JTextField("Name:");
+        name.setFont(new Font("", Font.PLAIN, 23));
+        name.setBorder(new LineBorder(Color.blue));
+        name.setForeground(Color.blue);
+        name.setHorizontalAlignment(JTextField.CENTER);
+        name.setBounds(200, 50, 340, 40);
+        jPanel.add(name);
+
+        JTextField LastName = new JTextField("LastName");
+        LastName.setBorder(BorderFactory.createLineBorder(Color.blue));
+        LastName.setHorizontalAlignment(JTextField.CENTER);
+        LastName.setForeground(Color.blue);
+        LastName.setFont(new Font("", Font.PLAIN, 22));
+        LastName.setBounds(200, 100, 340, 40);
+        jPanel.add(LastName);
+
+        JTextField Id = new JTextField("ID");
+        Id.setBorder(BorderFactory.createLineBorder(Color.blue));
+        Id.setHorizontalAlignment(JTextField.CENTER);
+        Id.setForeground(Color.blue);
+        Id.setFont(new Font("", Font.PLAIN, 22));
+        Id.setBounds(200, 150, 340, 40);
+        jPanel.add(Id);
+
+        JTextField email = new JTextField("Email");
+        email.setBorder(BorderFactory.createLineBorder(Color.blue));
+        email.setHorizontalAlignment(JTextField.CENTER);
+        email.setForeground(Color.blue);
+        email.setFont(new Font("", Font.PLAIN, 22));
+        email.setBounds(200, 200, 340, 40);
+        jPanel.add(email);
+
+        JTextField pass = new JTextField("Password");
+        pass.setBorder(BorderFactory.createLineBorder(Color.blue));
+        pass.setHorizontalAlignment(JTextField.CENTER);
+        pass.setForeground(Color.blue);
+        pass.setFont(new Font("", Font.PLAIN, 22));
+        pass.setBounds(200, 250, 340, 40);
+        jPanel.add(pass);
+
+
+        JButton button1 = new JButton("Submit");
+        button1.setFont(new Font("", Font.PLAIN, 25));
+        button1.setHorizontalAlignment(JButton.CENTER);
+        button1.setBackground(Color.blue);
+        button1.setForeground(Color.white);
+        button1.setBounds(200, 310, 340, 45);
+        jPanel.add(button1);
+
+
+        button1.addActionListener(e -> {
+
+        });
+        
+        frame.add(jPanel);
+        frame.setVisible(true);
+    }
 }
+
+
