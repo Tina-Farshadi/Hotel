@@ -4,14 +4,16 @@ public class Guest {
         private String LastName;
         private String email;
         private String id;
+        private String password;
 
-
-        public Guest(String Name,String LastName, String email,String id) {
+         public Guest(String Name,String LastName, String email,String id,String password) {
             this.Name = Name;
             this.LastName=LastName;
             this.email = email;
             this.id=id;
-        }
+            this.password=password;
+         }
+
         public String getName() {
             return Name;
         }
@@ -32,9 +34,9 @@ public class Guest {
             this.email = email;
         }
 
-        public String getId() {
+        public int getId() {
         return id;}
 
-      public void setId(String id) {
-        this.id = id;}
+      public String getPassword() {
+        return password;}
 }
