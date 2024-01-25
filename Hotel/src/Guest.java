@@ -34,7 +34,7 @@ public class Guest {
             this.email = email;
         }
 
-        public int getId() {
+        public String getId() {
         return id;}
 
       public String getPassword() {

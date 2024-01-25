@@ -1,10 +1,12 @@
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.sql.Connection;
 
 public class LoginPage extends JFrame {
     private static JFrame frame;
 
+    Connection connection;
     public static void main(String[] args) {
         frame = new JFrame();
         frame.setTitle("Sign up/Sign in");
@@ -72,6 +74,7 @@ public class LoginPage extends JFrame {
         name.setFont(new Font("", Font.PLAIN, 23));
         name.setBorder(new LineBorder(Color.blue));
         name.setForeground(Color.blue);
+        String Name=name.getText();
         name.setHorizontalAlignment(JTextField.CENTER);
         name.setBounds(200, 100, 340, 40);
         jPanel.add(name);
@@ -80,6 +83,7 @@ public class LoginPage extends JFrame {
         LastName.setBorder(BorderFactory.createLineBorder(Color.blue));
         LastName.setHorizontalAlignment(JTextField.CENTER);
         LastName.setForeground(Color.blue);
+        String lastname=LastName.getText();
         LastName.setFont(new Font("", Font.PLAIN, 22));
         LastName.setBounds(200, 150, 340, 40);
         jPanel.add(LastName);
@@ -88,6 +92,7 @@ public class LoginPage extends JFrame {
         Id.setBorder(BorderFactory.createLineBorder(Color.blue));
         Id.setHorizontalAlignment(JTextField.CENTER);
         Id.setForeground(Color.blue);
+        String id=Id.getText();
         Id.setFont(new Font("", Font.PLAIN, 22));
         Id.setBounds(200, 200, 340, 40);
         jPanel.add(Id);
@@ -131,7 +136,9 @@ public class LoginPage extends JFrame {
                     JOptionPane.showMessageDialog(null, "Your pass doesn't have the security that wee need\n" + "Security of your pass:" + security, "Error", JOptionPane.ERROR_MESSAGE);}
                 if (emailCheck && security>=3){
                     JOptionPane.showMessageDialog(null,"Hope you enjoy :)","Welcome!",JOptionPane.PLAIN_MESSAGE);
-
+                    Connection connection = JBCDemo.getConnection();
+                    GeustServices geustServices=new GeustServices(connection);
+                    boolean add= geustServices.Add(Name,lastname,Email,id,password);
                 }
              });
 
