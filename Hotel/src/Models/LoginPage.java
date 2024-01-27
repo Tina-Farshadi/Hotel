@@ -57,7 +57,8 @@ public class LoginPage extends JFrame {
         });
 
         button2.addActionListener(e -> {
-
+            log();
+            frame.remove(jPanel);
         });
 
         button3.addActionListener(e -> {
@@ -148,6 +149,49 @@ public class LoginPage extends JFrame {
 
         frame.add(jPanel);
         frame.setVisible(true);
+    }
+
+    public static void log(){
+        JPanel jPanel = new JPanel();
+        jPanel.setBackground(Color.white);
+        jPanel.setLayout(null);
+
+        JTextField email = new JTextField("Email");
+        email.setBorder(BorderFactory.createLineBorder(Color.blue));
+        email.setHorizontalAlignment(JTextField.CENTER);
+        email.setForeground(Color.blue);
+        email.setFont(new Font("", Font.PLAIN, 22));
+        email.setBounds(200, 160, 340, 40);
+        jPanel.add(email);
+
+        JTextField pass = new JTextField("Password");
+        pass.setBorder(BorderFactory.createLineBorder(Color.blue));
+        pass.setHorizontalAlignment(JTextField.CENTER);
+        pass.setForeground(Color.blue);
+        pass.setFont(new Font("", Font.PLAIN, 22));
+        pass.setBounds(200, 210, 340, 40);
+        jPanel.add(pass);
+
+        JButton button1 = new JButton("Submit");
+        button1.setFont(new Font("", Font.PLAIN, 25));
+        button1.setHorizontalAlignment(SwingConstants.CENTER);
+        button1.setBackground(Color.blue);
+        button1.setForeground(Color.white);
+        button1.setBounds(200, 280, 340, 45);
+        jPanel.add(button1);
+
+        button1.addActionListener(e -> {
+            EmailValidator emailValidator=new EmailValidator();
+            String Email = email.getText();
+            String password = pass.getText();
+
+        });
+
+
+
+        frame.add(jPanel);
+        frame.setVisible(true);
+
     }
 }
 

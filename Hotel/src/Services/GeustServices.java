@@ -13,7 +13,7 @@ public class GeustServices {
         Guest guest=new Guest(Name,LastName, email,id,pass);
 
         try {
-            String sql = "INSERT INTO guest (name, lastname, email, id, password) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO guest ('name', 'lastname', 'email', 'id', 'password') VALUES (?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, guest.getName());
             statement.setString(2, guest.getLastName());
@@ -29,4 +29,11 @@ public class GeustServices {
         }
         return false;
     }
+
+//    public boolean Check(){
+//        try {
+//            String sql="SELECT * FROM guest";
+//
+//        }
+//    }
 }
